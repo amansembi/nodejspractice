@@ -1,0 +1,17 @@
+{
+  "name": "npmmod",
+  "version": "1.0.0",
+  "description": "Amrinder learn nodejs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "amrinder singh",
+  "license": "ISC",
+  "dependencies": {
+    "chalk": "^4.1.1",
+    "nodemon": "^2.0.7",
+    "validater": "^1.0.5",
+    "validator": "^13.6.0"
+  }
+}

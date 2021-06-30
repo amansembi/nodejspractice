@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {{>headerlinks}}
+</head>
+<body>
+   {{>header}}
+<div class="weatherReport">
+    <div class="container">
+        <div class="row innerSectionWeather">
+            <section class="top-banner">
+                <div class="container">
+                  <form>
+                    <input id="cityName" type="text" placeholder="Search for a city">
+                    <button id="searchBtn" type="submit">{{SearchActionName}}</button>
+                    <span class="msg"></span>
+                  </form>
+                </div>
+              </section>
+              <section class="ajax-section">
+                <div class="container">
+                  <div class="weather-wrapper">
+                    <ul class="cities">
+                      <div class="weather-card current">
+                        <div class="loc-current"><img src="https://i.ibb.co/rvbDtdQ/pngaaa-com-203007.png" alt="You are here!"></img></div>
+                        <div class="weather-icon-current" id="weathercon">
+                        </div>
+                        <h1 class="city-temp"> <span id="city-temp">0</span><sup>ºC</sup></h1>
+                        <p id="city-current" class="city-current">My CITY</p>
+                        <span id="date" class='date-current'></span>
+                      </div>
+                    </ul>
+                  </div>
+                </div>
+              </section>
+        
+        </div>
+    </div>    
+</div>
+
+{{>footer}}
+<script src="js/main.js"></script>
+</body>
+</html>

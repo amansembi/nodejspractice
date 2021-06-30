@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" integrity="sha512-PgQMlq+nqFLV4ylk1gwUOgm6CtIIXkKwaIHp/PAIWHzig/lKZSEGKEysh0TCVbHJXCLN7WetD8TFecIky75ZfQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Document</title>
+</head>
+<body>
+    <div id="circle">
+        <span id="quotes" class="quote">Everything is possible and everything can be done!</span>
+        <div class="shadow"></div>
+        <div class="author"><span id="author">Stevan </br>Zakic</span><button id="newQ">Next</button></div>        
+      </div>
+      <script>
+          let realData = "";
+          const api = "https://type.fit/api/quotes";
+          const quotes = document.getElementById('quotes');
+          const author = document.getElementById('author');
+          const newQ = document.getElementById("newQ");
+          const getNewQuotes = (realData) =>{
+              console.log(realData);
+              let rnum = Math.floor(Math.random() * 20);
+              quotes.innerText = `${realData[rnum].text}`;
+              author.innerText = `${realData[rnum].author}`;
+          }
+          const getQuotes = async () =>{
+            
+            try{
+                let data = await fetch(api);
+                let realData = await data.json();
+                getNewQuotes(realData);
+               // console.log(realData.length);
+            }catch (error){}
+
+          };
+          
+          newQ.addEventListener("click",getQuotes);
+          //getQuotes();
+      </script>
+</body>
+</html>
